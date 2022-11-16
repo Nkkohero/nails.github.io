@@ -2,7 +2,7 @@ html{
   height: 100vh;
 }
 body {
-  background: linear-gradient(35deg, #6dcef9, #6dbed);
+  background: linear-gradient(to right top, #6dfc9, #6dbed);
   height: 100%;
   margin: 0;
   display: flex;
