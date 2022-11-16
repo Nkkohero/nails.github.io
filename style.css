@@ -3,8 +3,6 @@ html{
 }
 body {
   background: linear-gradient(#6dcef9, #6dbed);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   height: 100%;
   margin: 0;
   display: flex;
