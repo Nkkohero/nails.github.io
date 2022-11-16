@@ -2,7 +2,7 @@ html{
   height: 100vh;
 }
 body {
-  background: black;
+  background: linear-gradient(6dcef9, 6dbed);
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100%;
