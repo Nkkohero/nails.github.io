@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    color: #7351b3;
+}
+
+h1,
+h2 {
+    color: #4e2599;
+}
+
+body {
+    background: linear-gradient(35deg, #ba38d7, #7332eb, #a200da);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.dashboard {
+    width: 60%;
+    min-height: 80vh;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, .2));
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-radius: 1rem;
+    overflow: hidden;
+    z-index: 3;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, .5);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .3);
+}
+
+.sidebar {
+    background-color: rgba(255, 255, 255, .2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img-box {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.name {
+    margin-top: 1rem;
+    color: #4e2599;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: .7rem;
+}
+
+.si-img-box {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.si-name {
+    font-weight: 500;
+    color: #4e2599;
+}
+
+.sidebar-item:hover .si-name {
+    color: #a200da;
+}
+
+.active {
+    color: #a200da;
+}
+
+.pro {
+    display: flex;
+    align-items: center;
+    background-color: #7332eb;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.pro:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+}
+
+.pro-img-box {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 1rem;
+}
+
+
+/* main */
+
+.main {
+    padding: 2rem;
+}
+
+.skill {
+    background-color: rgba(255, 255, 255, .3);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.skill:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+}
+
+.skill-content {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+.skill-img-box {
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    margin-right: 2rem;
+}
+
+.skill-detail {
+    width: 100%;
+}
+
+.skill-progress {
+    position: relative;
+    height: 1rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #7332eb;
+}
+
+.progress-1 {
+    width: 60%;
+}
+
+.progress-2 {
+    width: 40%;
+}
+
+.progress-3 {
+    width: 80%;
+}
+
+
+/* cricles */
+
+.circle-1 {
+    position: absolute;
+    top: 5%;
+    right: 13%;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+}
+
+.circle-2 {
+    position: absolute;
+    bottom: -5%;
+    left: 10%;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    background-color: #d3dfbd;
+}
+
+.circle-3 {
+    position: absolute;
+    bottom: 65%;
+    left: 40%;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-color: orange;
+}
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="profile-img-box">
+                    <img src="https://scontent-vie1-1.xx.fbcdn.net/v/t1.6435-9/173242092_2916812061937925_4143368351309864881_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=0jurXzqd54kAX89to80&_nc_ht=scontent-vie1-1.xx&oh=00_AfBslYJHKcXLnVHplZw8LqFani72qPDgdfxgdEziHhhy3A&oe=639C90A0" alt="">
+                </div>
+                <h3 class="name">Alíz Nails</h3>
+                <p class="desc">Nail Saloon</p>
+            </div>
+            <div class="sidebar-items">
+                <a href="#" class="sidebar-item">
+                    <div class="si-img-box">
+                        <img src="assets/images/skills.png" alt="">
+                    </div>
+                    <h4 class="si-name active">Skills</h4>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <div class="si-img-box">
+                        <img src="assets/images/courses.png" alt="">
+                    </div>
+                    <h4 class="si-name">Courses</h4>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <div class="si-img-box">
+                        <img src="assets/images/upcoming.png" alt="">
+                    </div>
+                    <h4 class="si-name">Upcoming</h4>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <div class="si-img-box">
+                        <img src="assets/images/library.png" alt="">
+                    </div>
+                    <h4 class="si-name">Library</h4>
+                </a>
+            </div>
+            <div class="pro">
+                <h4 class="pro-text">Join pro for <br> free courses</h4>
+                <div class="pro-img-box">
+                    <img src="assets/images/premium-quality.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <h1>Munkáim</h1>
+            <a href="#" class="skill">
+                <div class="skill-content">
+                    <div class="skill-img-box">
+                        <img src="assets/images/read.png" alt="">
+                    </div>
+                    <div class="skill-detail">
+                        <h2 class="skill-title">Reading</h2>
+                        <p>211 Days</p>
+                        <div class="skill-progress">
+                            <div class="progress progress-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="percent">60%</h2>
+            </a>
+            <a href="#" class="skill">
+                <div class="skill-content">
+                    <div class="skill-img-box">
+                        <img src="assets/images/writing.png" alt="">
+                    </div>
+                    <div class="skill-detail">
+                        <h2 class="skill-title">Writing</h2>
+                        <p>114 Days</p>
+                        <div class="skill-progress">
+                            <div class="progress progress-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="percent">40%</h2>
+            </a>
+            <a href="#" class="skill">
+                <div class="skill-content">
+                    <div class="skill-img-box">
+                        <img src="assets/images/speaking.png" alt="">
+                    </div>
+                    <div class="skill-detail">
+                        <h2 class="skill-title">Speaking</h2>
+                        <p>371 Days</p>
+                        <div class="skill-progress">
+                            <div class="progress progress-3"></div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="percent">80%</h2>
+            </a>
+        </div>
+    </div>
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="circle-3"></div>
+</body>
+
+</html>
